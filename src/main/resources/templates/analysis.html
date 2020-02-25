@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>解析結果</title>
 </head>
 <body>
+    <div th:replace="common :: header"></div>
+    <div>
+        <p>file:[[${uploadfile}]]</p>
+    </div>
+    <div>
+        <input type="checkbox">箱ひげ図<br>
+        <input type="checkbox">折れ線グラフ<br>
+        <input type="checkbox">棒グラフ<br>
 
+        <input type="button" onclick="location.href='.\\result'" value="決定">
+    </div>
 </body>
 </html>

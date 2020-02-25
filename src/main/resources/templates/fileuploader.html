@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
+    <div th:replace="common :: header"></div>
     <div>
-        <a href=".\signin">サインイン</a><br>
-        <a href=".\signup">サインアップ</a>
-    </div>
-    <div>
-        <form action="/analysis" method="post">
-            <input type="file" accept="csv/text" name="uploadfile" required>
+        <form th:action="@{/analysis}" method="post">
+            <input type="file" accept="csv/text" name="uploadfile">
             <input type="submit">
         </form>
-</div>
+    </div>
 </body>
 </html>
