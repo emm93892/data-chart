@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>解析結果</title>
+    <title>選択</title>
 </head>
 <body>
     <div th:replace="common :: header"></div>
     <div>
         <p>file:[[${uploadfile}]]</p>
     </div>
-    <div>
-        <input type="checkbox">箱ひげ図<br>
-        <input type="checkbox">折れ線グラフ<br>
-        <input type="checkbox">棒グラフ<br>
 
-        <input type="button" onclick="location.href='.\\result'" value="決定">
+    <div>
+        <form th:action="@{/analysis}" method="post">
+            <input type="checkbox" name="boxplot">箱ひげ図<br>
+            <input type="checkbox" name="linegraph">折れ線グラフ<br>
+            <input type="checkbox" name="bargraph">棒グラフ<br>
+
+            <input type="submit">
+        </form>
     </div>
 </body>
 </html>

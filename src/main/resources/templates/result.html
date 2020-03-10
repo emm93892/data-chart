@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>解析結果</title>
 </head>
 <body>
+    <div th:replace="common :: header"></div>
+
+    <img th:src="${base64image}"/>
+
+    <div th:each="list,stat : ${List}">
+        <div th:if="${list}">
+            <div th:switch="${stat.index}">
+                <p th:case="0">箱ひげ図</br>
+                </p>
+                <p th:case="1">折れ線グラフ</p>
+                <p th:case="2">棒グラフ</p>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

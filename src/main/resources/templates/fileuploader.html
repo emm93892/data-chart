@@ -6,10 +6,18 @@
 </head>
 <body>
     <div th:replace="common :: header"></div>
+        csv
     <div>
-        <form th:action="@{/analysis}" method="post">
-            <input type="file" accept="csv/text" name="uploadfile">
+        <form th:action="@{/uploaded}" method="post">
+            <input type="file" accept="csv" name="uploadfile">
             <input type="submit">
+        </form>
+    </div>
+        img
+    <div>
+        <form th:action="@{/img}"  method="post" enctype="multipart/form-data">
+            <input type="file" accept="jpg">
+            <input th:type="submit">
         </form>
     </div>
 </body>
